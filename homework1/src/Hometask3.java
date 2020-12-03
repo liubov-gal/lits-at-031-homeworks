@@ -3,30 +3,25 @@ import java.util.Collections;
 
 public class Hometask3 {
     public static void main(String args[]) {
-        Integer[] list = {18, 23, 6, 89, 15, 15, 6, 34, 44, 12};
+        Integer[] list = {18, 23, 6, 89, 15, 15, 34, 44, 12, 6};
         int min = Collections.min(Arrays.asList(list));
         System.out.println(min);
         int sum = 0;
-        int min_dubl = 0;
-        int counter = 1;
+        int minNumber = 0;
 
 
         for(int i = 0; i < list.length; i++){
             sum += list[i];
             if (list[i] == min) {
-                min_dubl += 1;
+                minNumber = i;
             }
         }
-        int average_list = sum / list.length;
+        int averageList = sum / list.length;
         for(int i = 0; i < list.length; i++){
-            if (list[i] == min) {
-                if (min_dubl == counter){
-                    list[i] = average_list;
-                }
-                counter += 1;
-            }
+            list[minNumber] = averageList;
         }
-        System.out.println(min_dubl);
+        System.out.println(minNumber);
+        System.out.println(averageList);
         System.out.println(Arrays.toString(list));
     }
 }
